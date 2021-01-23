@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar API Test</title>
+</head>
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3"><i class="fas fa-newspaper"></i>TESTING RADAR</h1>
+      </header>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+      $.ajax({
+        url: 'https://api.radar.io/v1/search/autocomplete?query=brooklyn', 
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
+        }, success: function(data){
+            console.log(data);
+            //process the JSON data etc
+        }
+})
+</script>
+</body>
+
+
+
