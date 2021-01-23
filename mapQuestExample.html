@@ -1,0 +1,38 @@
+<!--Website for mapquest documentation: https://developer.mapquest.com/documentation/mapquest-js/v1.3/examples/basic-map/-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+          <!--MapQuest API and Style links-->
+          <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+          <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+      
+          <script type="text/javascript">
+            window.onload = function() {
+              L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+      
+              var map = L.mapquest.map('map', {
+                center: [40.7128, -74.0059],
+                layers: L.mapquest.tileLayer('map'),
+                zoom: 13
+              });
+      
+              L.mapquest.directions().route({
+                start: '350 5th Ave, New York, NY 10118',
+                end: 'One Liberty Plaza, New York, NY 10006'
+              });
+            }
+          </script>
+        </head>
+      
+        <body style="border: 0; margin: 0;">
+          <div id="map" style="width: 100%; height: 530px;"></div>
+
+        </body>
+      </html>

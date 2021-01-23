@@ -1,0 +1,40 @@
+<!--Documentation Reference: https://openchargemap.org/site/develop/api-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script>
+
+//Open Charger Object Return Test
+        var apiKey = "6375c58d-f6df-4c4c-a52f-484acaf89aaf";
+    
+        var queryURL = "https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&latitude=44.05&longitude=-121.32&maxresults=10"
+
+        $.ajax({
+            method: "GET",
+            url: queryURL
+        }).then(function(response) {
+            console.log(response);
+        })
+
+// Googe Geocoding API test
+        var googleApiKey = "AIzaSyCuYqstjpQRifJajd9s4Ky8Skv5v11A6Pc"
+        var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:55427&key=AIzaSyCuYqstjpQRifJajd9s4Ky8Skv5v11A6Pc"
+        $.ajax({
+            method: "GET",
+            url: googleURL
+        }).then(function(response) {
+            console.log(response);
+        })
+    </script>
+</body>
+</html>
