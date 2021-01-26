@@ -14,7 +14,10 @@
 <script>
 
       $.ajax({
-        url: 'https://api.radar.io/v1/search/autocomplete?query=brooklyn', 
+        //This is the geocode call. It calls back a more precise object.
+        url: `https://api.radar.io/v1/geocode/forward?query=minneapolis`,
+        //This is the general search call.
+        // url: 'https://api.radar.io/v1/search/autocomplete?query=minneapolis', 
         beforeSend: function(xhr) {
              xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
         }, success: function(data){
