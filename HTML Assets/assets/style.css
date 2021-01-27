@@ -1,9 +1,19 @@
 #header{
     text-align: center;
     color: white;
-    font-style: ;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-size: 30px;
 }
 body {
     background-color: rgb(34, 79, 118);
     background-origin: ;
+}
+#headerBox{
+    background-color: black;
+    width: 1000px;
+    height: 100px;
+    top: auto;
+    position: relative;
+    margin: 100px;
+    border:;
 }
