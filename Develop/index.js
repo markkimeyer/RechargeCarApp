@@ -1,3 +1,18 @@
+//MapQuest Function. Placeholder values. Doesn't really have a function yet
+window.onload = function() {
+    L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+    var map = L.mapquest.map('map', {
+      center: [40.7128, -74.0059],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 13
+    });
+
+    L.mapquest.directions().route({
+      start: '350 5th Ave, New York, NY 10118',
+      end: 'One Liberty Plaza, New York, NY 10006'
+    });
+  }
 
 //Function to take inputs and put them in the queryURL
 function buildQueryURL() {
