@@ -1,19 +1,41 @@
 #header{
     text-align: center;
     color: white;
-    font-family: 'Hachi Maru Pop', cursive;
+    font-family: ;
     font-size: 30px;
 }
 body {
     background-color: rgb(34, 79, 118);
-    background-origin: ;
 }
 #headerBox{
     background-color: black;
     width: 1000px;
-    height: 100px;
-    top: auto;
-    position: relative;
-    margin: 100px;
-    border:;
+    height: 67px;
+    margin-top: -10px;
+    margin-left: 100px;
+    margin-right: 50px;
 }
+#searchBarBox{
+    background-color: white;
+    width: 550px;
+    height: 35px;
+    margin-left: 20px;
+    margin-top: 5px;
+    float: left;
+}
+#locationsBox {
+    background-color: white;
+    width: 550px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#mapBox {
+    background-color: white;
+    width: 1250px;
+    height: 400px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
