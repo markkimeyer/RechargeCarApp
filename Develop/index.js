@@ -1,94 +1,121 @@
+//MapQuest Function. Placeholder values. Doesn't really have a function yet
+window.onload = function() {
+    L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+    var map = L.mapquest.map('map', {
+      center: [40.7128, -74.0059],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 13
+    });
+
+    L.mapquest.directions().route({
+      start: '350 5th Ave, New York, NY 10118',
+      end: 'One Liberty Plaza, New York, NY 10006'
+    });
+  }
 
 //Function to take inputs and put them in the queryURL
 function buildQueryURL() {
- 
- var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
- console.log(queryURL)
 
- //Value is a placeholder. Will be changed once input fields are created.
- var address = "+" + "Upper Ground";
+    var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
 
- if (address) {
- address = address.replaceAll(" ", "+");
- queryURL += address;
- console.log(queryURL);
- console.log(address);
- }
+    //Value is a placeholder. Will be changed once input fields are created.
+    var address = "+" + "1508 Sumter Ave N";
 
-//Value is a placeholder. Will be changed once input fields are created.
- var city = "+" + "London"
+    if (address) {
+        address = address.replaceAll(" ", "+");
+        queryURL += address;
+    }
 
- if (city) {
- city = city.replaceAll(" ", "+");
- queryURL += city;
- console.log(city);
- console.log(queryURL)
-}
+    //Value is a placeholder. Will be changed once input fields are created.
+    var city = "+" + "Golden Valley"
 
-//Value is a placeholder. Will be changed once input fields are created.
-var state = "+" + ""
+    if (city) {
+        city = city.replaceAll(" ", "+");
+        queryURL += city;
+    }
 
-if (state) {
-    state = state.replaceAll(" ", "+");
-    queryURL += state;
-    console.log(state);
-    console.log(queryURL)
-}
+    //Value is a placeholder. Will be changed once input fields are created.
+    var state = "+" + "MN"
 
-//Value is a placeholder. Will be changed once input fields are created.
-var zip = "+" + "SE1 9PX"
+    if (state) {
+        state = state.replaceAll(" ", "+");
+        queryURL += state;
+    }
 
-if (zip) {
-    zip = zip.replaceAll(" ", "+");
-    queryURL += zip;
-    console.log(zip);
-    console.log(queryURL)
-}
+    //Value is a placeholder. Will be changed once input fields are created.
+    var zip = "+" + "55427"
 
-//Value is a placeholder. Will be changed once input fields are created.
-var country = "+" + "UK"
+    if (zip) {
+        zip = zip.replaceAll(" ", "+");
+        queryURL += zip;
+    }
 
-if (country) {
-    country = country.replaceAll(" ", "+");
-    queryURL += country;
-    console.log(country);
-    console.log(queryURL)
-}
-return queryURL
+    //Value is a placeholder. Will be changed once input fields are created.
+    var country = "+" + "US"
+
+    if (country) {
+        country = country.replaceAll(" ", "+");
+        queryURL += country;
+    }
+
+    return queryURL
 }
 
 //Function to return info from latitude and longitude
 function getMapInfo(latitude, longitude) {
-    // var chargeKey = "6375c58d-f6df-4c4c-a52f-484acaf89aaf";
-    
-var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
 
-$.ajax({
-    method: "GET",
-    url: chargeURL
-}).then(function(response) {
-    console.log(response);
-})
+    var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
+
+    $.ajax({
+        method: "GET",
+        url: chargeURL
+    }).then(function (response) {
+        console.log(response);
+
+        for (var i = 0; i < 5; i++) {
+            var station = response[i];
+
+            //For rendering on page
+            var stationName = station.AddressInfo.Title;
+            var stationAddress = station.AddressInfo.AddressLine1;
+            var stationTown = station.AddressInfo.Town;
+            var stationState = station.AddressInfo.StateOrProvince;
+            var stationZip = station.AddressInfo.Postcode;
+            var stationURL = station.AddressInfo.RelatedURL;
+            var stationPhone = station.AddressInfo.ContactTelephone1;
+            var stationComments = station.AddressInfo.AccessComments;
+
+            var stationStatus = station.UsageType.Title;
+
+            //For Mapquest API
+            var stationLat = station.AddressInfo.Latitude;
+            var stationLong = station.AddressInfo.Longitude;
+
+        }
+    })
 
 }
 
 //Onclick function that retrieves radar and open charger objects
-$(".test").on("click", function() {
+$(".test").on("click", function () {
 
-var radarURL = buildQueryURL();
-console.log(radarURL)
+    var radarURL = buildQueryURL();
 
-$.ajax({
-    url: radarURL,
-    beforeSend: function(xhr) {
-         xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
-    }, success: function(data){
-        console.log(data);
+    $.ajax({
+        url: radarURL,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
+        }, success: function (data) {
 
-        var lat = data.addresses[0].latitude;
-        var long = data.addresses[0].longitude;
-       
-        getMapInfo(lat, long);
-    }
-})
+
+            var lat = data.addresses[0].latitude;
+            var long = data.addresses[0].longitude;
+
+            getMapInfo(lat, long);
+        }, error: function (jqXHR) {
+            //Enter error functions here
+        }
+
+    })
 })
