@@ -108,12 +108,6 @@ window.onload = function () {
                     draggable: false
                 }).bindPopup(stationName).addTo(map);
 
-                //Directions function for mapquest. Will not live here.
-                // L.mapquest.directions().route({
-                //   start: '350 5th Ave, New York, NY 10118',
-                //   end: 'One Liberty Plaza, New York, NY 10006'
-                // });
-
             }
 
         })
