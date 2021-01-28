@@ -1,7 +1,7 @@
-//MapQuest Function. Placeholder values. Doesn't really have a function yet
+//Necessary to wrap whole page in this function for MapQuest needs
 window.onload = function () {
 
-    //Placeholder map
+    //MapQuest Function. Placeholder values. Doesn't really have a function yet
     L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
     var map = L.mapquest.map('map', {
@@ -17,45 +17,50 @@ window.onload = function () {
         var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var address = "+" + "1508 Sumter Ave N";
+        var address = "1508 Sumter Ave N";
 
         if (address) {
+            address = "+" + address;
             address = address.replaceAll(" ", "+");
             queryURL += address;
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var city = "+" + "Golden Valley"
+        var city = "Golden Valley"
 
         if (city) {
+            city = "+" + city;
             city = city.replaceAll(" ", "+");
             queryURL += city;
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var state = "+" + "MN"
+        var state = "MN"
 
         if (state) {
+            state = "+" + state;
             state = state.replaceAll(" ", "+");
             queryURL += state;
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var zip = "+" + "55427"
+        var zip = "55427"
 
         if (zip) {
+            zip = "+" + zip;
             zip = zip.replaceAll(" ", "+");
             queryURL += zip;
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var country = "+" + "US"
+        var country = "US"
 
         if (country) {
+            country = "+" + country;
             country = country.replaceAll(" ", "+");
             queryURL += country;
         }
-
+        console.log(queryURL)
         return queryURL
     }
 
@@ -114,6 +119,16 @@ window.onload = function () {
         })
 
     }
+
+    $(".mapTest").on("click", function () {
+    
+       //Start and end are placeholders. Will be changed with input fields are ready
+                L.mapquest.directions().route({
+                  start: '350 5th Ave, New York, NY 10118',
+                  end: 'One Liberty Plaza, New York, NY 10006'
+                });
+            })
+    
 
     //Onclick function that retrieves radar and open charger objects
     $(".test").on("click", function () {
