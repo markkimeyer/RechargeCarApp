@@ -7,6 +7,9 @@
 body {
     background-color: rgb(34, 79, 118);
 }
+html {
+    background-color: rgb(34, 79, 118);;
+}
 #headerBox{
     background-color: black;
     width: 1000px;
@@ -36,6 +39,13 @@ body {
     height: 400px;
     margin-left: 20px;
     margin-top: 10px;
+}
+#populatedLocations {
+    background-color: white;
+    width: 550px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
 
