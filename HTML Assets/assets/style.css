@@ -27,12 +27,12 @@ html {
 }
 .is-warning {
     width: 100px;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 #addressInput {
     width: 500px;
-    height: 25px;
-    margin-top: 5px;
+    height: 30px;
+    margin-top: 15px;
 }
 .button {
     margin-top: 2px;
