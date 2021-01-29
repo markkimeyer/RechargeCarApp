@@ -18,29 +18,6 @@ html {
     margin-left: 100px;
     margin-right: 50px;
 }
-#searchBarBox{
-    background-color: white;
-    width: 550px;
-    height: 35px;
-    margin-left: 20px;
-    margin-top: 5px;
-    float: left;
-}
-#locationsBox {
-    background-color: white;
-    width: 550px;
-    height: 150px;
-    margin-top: 50px;
-    margin-left: 20px;
-}
-#mapBox {
-    background-color: white;
-    width: 1250px;
-    height: 400px;
-    margin-left: 20px;
-    margin-right: 100px;
-    margin-top: 10px;
-}
 #populatedLocations {
     background-color: white;
     width: 550px;
@@ -50,10 +27,12 @@ html {
 }
 .is-warning {
     width: 100px;
+    margin-top: 15px;
 }
 #addressInput {
     width: 500px;
     height: 25px;
+    margin-top: 5px;
 }
 .button {
     margin-top: 2px;
@@ -62,6 +41,8 @@ html {
 .box {
     height: 200px;
     width: 500px;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 .label {
     margin-top: -20px;
