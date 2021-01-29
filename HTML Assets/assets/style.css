@@ -49,4 +49,9 @@ html {
     margin-left: -20px;
     color: black;
 }
+#stationField {
+    margin-left: 50px;
+    height: auto;
+    
+}
 
