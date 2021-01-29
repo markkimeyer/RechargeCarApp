@@ -1,13 +1,15 @@
 //Necessary to wrap whole page in this function for MapQuest needs
 window.onload = function () {
 
+    var startAddress = "";
+
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
     L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
     var map = L.mapquest.map('map', {
-        center: [40.7128, -74.0059],
+        center: [34.05513, -118.25703],
         layers: L.mapquest.tileLayer('map'),
-        zoom: 13
+        zoom: 9
     });
 
 
@@ -23,6 +25,7 @@ window.onload = function () {
         var address = $("#addressInput").val();
 
         if (address) {
+            startAddress += address + " ";
             address = "+" + address;
             address = address.replaceAll(" ", "+");
             queryURL += address;
@@ -32,6 +35,7 @@ window.onload = function () {
         var city = $("#cityInput").val();
 
         if (city) {
+            startAddress += city + " ";
             city = "+" + city;
             city = city.replaceAll(" ", "+");
             queryURL += city;
@@ -41,6 +45,7 @@ window.onload = function () {
         var state = $("#stateInput").val();
 
         if (state) {
+            startAddress += state + " ";
             state = "+" + state;
             state = state.replaceAll(" ", "+");
             queryURL += state;
@@ -50,6 +55,7 @@ window.onload = function () {
         var zip = $("#postalZipInput").val();
 
         if (zip) {
+            startAddress += zip + " ";
             zip = "+" + zip;
             zip = zip.replaceAll(" ", "+");
             queryURL += zip;
@@ -59,16 +65,21 @@ window.onload = function () {
         var country = $("#countryInput").val();
 
         if (country) {
+            startAddress += country;
             country = "+" + country;
             country = country.replaceAll(" ", "+");
             queryURL += country;
         }
+
+        console.log(startAddress);
         console.log(queryURL)
         return queryURL
     }
 
     //Function to return info from latitude and longitude
     function getMapInfo(latitude, longitude) {
+
+        $(".field").empty()
 
         var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
 
@@ -80,7 +91,7 @@ window.onload = function () {
 
             L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
-            var map = L.mapquest.map('map', {
+            map = L.mapquest.map('map', {
                 center: [latitude, longitude],
                 layers: L.mapquest.tileLayer('map'),
                 zoom: 11
@@ -129,6 +140,10 @@ window.onload = function () {
                 sStatus.html("<b>Status: </b>" + stationStatus);
                 stationDiv.append(sStatus);
 
+                var sButton = $("<button class='button is-black directBtn'>");
+                sButton.text("Get Directions!");
+                stationDiv.append(sButton);
+
 
                 $(".field").append(stationDiv);
 
@@ -141,21 +156,21 @@ window.onload = function () {
                 L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
-                    
-                }).bindPopup(stationName).addTo(map);
+                    }).bindPopup(stationName).addTo(map);
 
             }
 
         })
 
     }
+    $(document).on("click", ".directBtn", function () {
 
-    $(".mapTest").on("click", function () {
+        var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
+        console.log(endAddress);
     
-       //Start and end are placeholders. Will be changed with input fields are ready
                 L.mapquest.directions().route({
-                  start: '350 5th Ave, New York, NY 10118',
-                  end: 'One Liberty Plaza, New York, NY 10006'
+                  start: startAddress,
+                  end: endAddress,
                 });
             })
     
