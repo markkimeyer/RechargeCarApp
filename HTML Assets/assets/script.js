@@ -89,7 +89,6 @@ window.onload = function () {
             for (var i = 0; i < 5; i++) {
                 var station = response[i];
 
-                //For rendering on page
                 var stationName = station.AddressInfo.Title;
                 var stationAddress = station.AddressInfo.AddressLine1;
                 var stationTown = station.AddressInfo.Town;
@@ -98,8 +97,41 @@ window.onload = function () {
                 var stationURL = station.AddressInfo.RelatedURL;
                 var stationPhone = station.AddressInfo.ContactTelephone1;
                 var stationComments = station.AddressInfo.AccessComments;
-
                 var stationStatus = station.UsageType.Title;
+
+                var stationDiv = $("<div class='card' id='station'>")
+
+                var sName = $("<h3 class='card-header-title'>");
+                sName.html(stationName);
+                stationDiv.append(sName);
+
+                var sAddress = $("<p class='address'>")
+                sAddress.html(stationAddress);
+                stationDiv.append(sAddress);
+
+                var sTown = $("<p class='town'>")
+                sTown.html(stationTown + ", " + stationState + " " + stationZip);
+                stationDiv.append(sTown);
+
+                var sWebsite = $("<p class='website'>")
+                sWebsite.html("<b>Website: </b>" + stationURL);
+                stationDiv.append(sWebsite);
+
+                var sPhone = $("<p class='phone'>")
+                sPhone.html("<b>Phone: </b>" + stationPhone);
+                stationDiv.append(sPhone);
+              
+                var sComments = $("<p class='comments'>")
+                sComments.html("<b>Comments: </b>" + stationComments);
+                stationDiv.append(sComments);
+
+                var sStatus = $("<p class='status'>")
+                sStatus.html("<b>Status: </b>" + stationStatus);
+                stationDiv.append(sStatus);
+
+
+                $(".field").append(stationDiv);
+
 
                 //For Mapquest API
                 var stationLat = station.AddressInfo.Latitude;
@@ -142,22 +174,6 @@ window.onload = function () {
             }, success: function (data) {
                 
                 
-                
-                //   $("#myModal").display = "block";
-                
-                
-               
-                // $(".close").onclick = function() {
-                //     $("#myModal").display = "none";
-                // }
-                
-                
-                // window.onclick = function(event) {
-                //   if (event.target == $("#myModal")) {
-                //     $("#myModal").display = "none";
-                //   }
-                // }
-
                 var lat = data.addresses[0].latitude;
                 var long = data.addresses[0].longitude;
 
