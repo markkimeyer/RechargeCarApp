@@ -7,6 +7,9 @@
 body {
     background-color: rgb(34, 79, 118);
 }
+html {
+    background-color: rgb(34, 79, 118);;
+}
 #headerBox{
     background-color: black;
     width: 1000px;
@@ -37,5 +40,22 @@ body {
     margin-left: 20px;
     margin-top: 10px;
 }
-
+#populatedLocations {
+    background-color: white;
+    width: 550px;
+    height: 150px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+.is-warning {
+    width: 100px;
+}
+#addressInput {
+    width: 500px;
+    height: 25px;
+}
+.button {
+    margin-top: 2px;
+    height: 35px
+}
 
