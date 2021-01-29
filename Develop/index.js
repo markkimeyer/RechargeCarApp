@@ -13,11 +13,14 @@ window.onload = function () {
 
     //Function to take inputs and put them in the queryURL
     function buildQueryURL() {
+      
 
         var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
 
+
+
         //Value is a placeholder. Will be changed once input fields are created.
-        var address = "1508 Sumter Ave N";
+        var address = $("#addressInput").val();
 
         if (address) {
             address = "+" + address;
@@ -26,7 +29,7 @@ window.onload = function () {
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var city = "Golden Valley"
+        var city = $("#cityInput").val();
 
         if (city) {
             city = "+" + city;
@@ -35,7 +38,7 @@ window.onload = function () {
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var state = "MN"
+        var state = $("#stateInput").val();
 
         if (state) {
             state = "+" + state;
@@ -44,7 +47,7 @@ window.onload = function () {
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var zip = "55427"
+        var zip = $("#postalZipInput").val();
 
         if (zip) {
             zip = "+" + zip;
@@ -53,7 +56,7 @@ window.onload = function () {
         }
 
         //Value is a placeholder. Will be changed once input fields are created.
-        var country = "US"
+        var country = $("#countryInput").val();
 
         if (country) {
             country = "+" + country;
@@ -125,7 +128,7 @@ window.onload = function () {
     
 
     //Onclick function that retrieves radar and open charger objects
-    $(".test").on("click", function () {
+    $("#userSubmit").on("click", function () {
 
         //Empties placeholder map
         map.remove()
@@ -137,19 +140,35 @@ window.onload = function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
             }, success: function (data) {
-
+                
+                
+                
+                //   $("#myModal").display = "block";
+                
+                
+               
+                // $(".close").onclick = function() {
+                //     $("#myModal").display = "none";
+                // }
+                
+                
+                // window.onclick = function(event) {
+                //   if (event.target == $("#myModal")) {
+                //     $("#myModal").display = "none";
+                //   }
+                // }
 
                 var lat = data.addresses[0].latitude;
                 var long = data.addresses[0].longitude;
 
                 getMapInfo(lat, long);
+
+            
             }, error: function (jqXHR) {
                 //Enter error functions here
             }
 
         })
     })
-
-
 
 }

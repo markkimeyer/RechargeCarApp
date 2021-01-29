@@ -6,6 +6,9 @@
     <title>Recharge</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="assets/style.css">
+    <!--Anna Delete-->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 </head>
 
 <body>
@@ -21,11 +24,14 @@
         <input class="input is-warning" type="text" placeholder="Postal/Zip Code" id="postalZipInput">
         <input class="input is-warning" type="text" placeholder="City " id="cityInput">
         <input class="input is-warning" type="text" placeholder="Address" id="addressInput">
-        <button class="button is-black">Submit!</button>
+        <!--Anna delete id-->
+        <button id="userSubmit" class="button is-black">Submit!</button>
 
     </div>
-    <div class="column" id="map">
-
+    <!-- <div class="column" id="map"> -->
+        <!--Anna delete-->
+        <div id="map" style="width: 75%; height: 500px;"></div>
+        
     </div>
 
 </div>
@@ -33,9 +39,10 @@
 
 
 
-    
-
-    
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--JS-->
+    <script src="../Develop/index.js"></script>
 
 </body>
 </html>
