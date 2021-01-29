@@ -47,5 +47,15 @@ html {
     margin-top: 50px;
     margin-left: 10px;
 }
-
+.is-warning {
+    width: 100px;
+}
+#addressInput {
+    width: 500px;
+    height: 25px;
+}
+.button {
+    margin-top: 2px;
+    height: 35px
+}
 
