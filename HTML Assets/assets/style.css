@@ -42,8 +42,30 @@ body, html {
     color: black;
 }
 
-/* #stationField {
-    margin-left: 50px;
-    height: auto;  
-} */
+.modal-card {
+    font-size: 40px;
+    margin-top: 50px;
+}
 
+.modal-background {
+    height: 25%;
+}
+
+#map {
+    margin: 0 auto;
+}
+
+#station {
+    float: left;
+    width: 190px;
+    height: 300px;
+    position: relative;
+    margin: 2px;
+    margin-bottom: 10px;
+}
+
+.directBtn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}

@@ -6,16 +6,18 @@ window.onload = function () {
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
     L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
+
     var map = L.mapquest.map('map', {
         center: [34.05513, -118.25703],
-        layers: L.mapquest.tileLayer('map'),
+        layers: L.mapquest.tileLayer('light'),
         zoom: 9
     });
 
 
+
     //Function to take inputs and put them in the queryURL
     function buildQueryURL() {
-      
+
 
         var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
 
@@ -93,7 +95,7 @@ window.onload = function () {
 
             map = L.mapquest.map('map', {
                 center: [latitude, longitude],
-                layers: L.mapquest.tileLayer('map'),
+                layers: L.mapquest.tileLayer('light'),
                 zoom: 11
             });
 
@@ -124,21 +126,29 @@ window.onload = function () {
                 sTown.html(stationTown + ", " + stationState + " " + stationZip);
                 stationDiv.append(sTown);
 
-                var sWebsite = $("<p class='website'>")
-                sWebsite.html("<b>Website: </b>" + stationURL);
-                stationDiv.append(sWebsite);
+                if (stationURL !== null) {
+                    var sWebsite = $("<p class='website'>")
+                    sWebsite.html("<b>Website: </b>" + stationURL);
+                    stationDiv.append(sWebsite);
+                }
 
-                var sPhone = $("<p class='phone'>")
-                sPhone.html("<b>Phone: </b>" + stationPhone);
-                stationDiv.append(sPhone);
-              
-                var sComments = $("<p class='comments'>")
-                sComments.html("<b>Comments: </b>" + stationComments);
-                stationDiv.append(sComments);
+                if (stationPhone !== null) {
+                    var sPhone = $("<p class='phone'>")
+                    sPhone.html("<b>Phone: </b>" + stationPhone);
+                    stationDiv.append(sPhone);
+                }
 
-                var sStatus = $("<p class='status'>")
-                sStatus.html("<b>Status: </b>" + stationStatus);
-                stationDiv.append(sStatus);
+                if (stationComments !== null) {
+                    var sComments = $("<p class='comments'>")
+                    sComments.html("<b>Comments: </b>" + stationComments);
+                    stationDiv.append(sComments);
+                }
+
+                if (stationStatus !== "Unknown") {
+                    var sStatus = $("<p class='status'>")
+                    sStatus.html("<b>Status: </b>" + stationStatus);
+                    stationDiv.append(sStatus);
+                }
 
                 var sButton = $("<button class='button is-black directBtn'>");
                 sButton.text("Get Directions!");
@@ -156,7 +166,7 @@ window.onload = function () {
                 L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
-                    }).bindPopup(stationName).addTo(map);
+                }).bindPopup(stationName).addTo(map);
 
             }
 
@@ -165,21 +175,25 @@ window.onload = function () {
     }
     $(document).on("click", ".directBtn", function () {
 
+
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
         console.log(endAddress);
-    
-                L.mapquest.directions().route({
-                  start: startAddress,
-                  end: endAddress,
-                });
-            })
-    
+
+        //Need to figure out how to delete old route when new route is put in
+        map.addControl(L.mapquest.control());
+
+        L.mapquest.directions().route({
+            start: startAddress,
+            end: endAddress,
+        });
+
+
+    })
+
 
     //Onclick function that retrieves radar and open charger objects
     $("#userSubmit").on("click", function () {
 
-        //Empties placeholder map
-        map.remove()
 
         var radarURL = buildQueryURL();
 
@@ -188,8 +202,8 @@ window.onload = function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
             }, success: function (data) {
-                
-                
+                map.remove()
+
                 var lat = data.addresses[0].latitude;
                 var long = data.addresses[0].longitude;
 
@@ -197,14 +211,16 @@ window.onload = function () {
 
                 getMapInfo(lat, long);
 
-            
+
             }, error: function (jqXHR) {
                 console.log(jqXHR)
+
                 $(".modal").addClass("is-active");
-            
-            $(".modal-close").click(function() {
-               $(".modal").removeClass("is-active");
-            });
+
+                $(".modal-close").click(function () {
+                    $(".modal").removeClass("is-active");
+
+                });
             }
 
         })

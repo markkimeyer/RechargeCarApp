@@ -18,9 +18,9 @@
         <div id="header">
             <h1>Recharge</h1>
         </div>
+    </div>
 
-
-        <div class="columns">
+        <div class="columns is-mobile">
             <div class="column">
                 <input class="input is-warning" type="text" placeholder="Address" id="addressInput">
                 <input class="input is-warning" type="text" placeholder="City " id="cityInput">
@@ -28,29 +28,26 @@
                 <input class="input is-warning" type="text" placeholder="Postal/Zip Code" id="postalZipInput">
                 <input class="input is-warning" type="text" placeholder="Country" id="countryInput">
                 <button id="userSubmit" class="button is-black">Submit!</button>
-
-            </div>
-
-            <div class="field" id="stationField"></div>
+            </div>   
         </div>
+
+        <div class="field" id="stationField"></div>
         <div id="map" style="width: 75%; height: 500px;"></div>
 
 
-    </div>
-
-    <!--Code for Modal-->
-    <div class="modal">
-        <div class="modal-background"></div>
+     <!--Code for Modal-->
+     <div class="modal">
+       <div class="modal-background">
         <div class="modal-card">
             <div class="modal-card-body">
 
                 <h1>Please enter a valid location.</h1>
-
+                <button class="modal-close is-large"></button>
             </div>
+            
         </div>
-        <button class="modal-close"></button>
+       
     </div>
-
 
     <!--jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
