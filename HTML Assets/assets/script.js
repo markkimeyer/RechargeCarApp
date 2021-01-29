@@ -83,7 +83,7 @@ window.onload = function () {
             var map = L.mapquest.map('map', {
                 center: [latitude, longitude],
                 layers: L.mapquest.tileLayer('map'),
-                zoom: 13
+                zoom: 11
             });
 
             for (var i = 0; i < 5; i++) {
@@ -140,7 +140,8 @@ window.onload = function () {
                 //puts pins in map for locations
                 L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
-                    draggable: false
+                    draggable: false,
+                    
                 }).bindPopup(stationName).addTo(map);
 
             }
@@ -176,6 +177,8 @@ window.onload = function () {
                 
                 var lat = data.addresses[0].latitude;
                 var long = data.addresses[0].longitude;
+
+                console.log(lat + " " + long);
 
                 getMapInfo(lat, long);
 
