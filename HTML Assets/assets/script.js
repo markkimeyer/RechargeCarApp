@@ -181,7 +181,12 @@ window.onload = function () {
 
             
             }, error: function (jqXHR) {
-                //Enter error functions here
+                console.log(jqXHR)
+                $(".modal").addClass("is-active");
+            
+            $(".modal-close").click(function() {
+               $(".modal").removeClass("is-active");
+            });
             }
 
         })
