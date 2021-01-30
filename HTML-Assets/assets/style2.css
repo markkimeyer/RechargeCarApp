@@ -2,18 +2,9 @@ html {
     background-image: url(https://www.itl.cat/pngfile/big/299-2992292_electric-wallpapers-pc-electricity-background-picture-cool.jpg);
 }
 
-/* #headerBox{
-    background-color: black;
-    width: 1000px;
-    height: 100px;
-    margin-top: -10px;
-    margin-left: 100px;
-    margin-right: 50px;
-} */
 
 .welcome {
     background-color: black;
-    outline;
     color: white;
     margin: 20px 60px;
     text-align: center;
