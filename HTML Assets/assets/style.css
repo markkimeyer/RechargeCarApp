@@ -52,6 +52,10 @@ html {
 #stationField {
     margin-left: 50px;
     height: auto;
-    
 }
-
+#userSubmit {
+    margin-top: 10px;
+}
+#map {
+    margin-top: 10px;
+}
