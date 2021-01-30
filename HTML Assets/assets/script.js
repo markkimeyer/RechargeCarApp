@@ -161,6 +161,7 @@ window.onload = function () {
                 L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
+                    zoom: 14
                 }).bindPopup(stationName).addTo(map);
 
             }
@@ -169,12 +170,30 @@ window.onload = function () {
 
     }
 
+    //Onclick event to render directions to map
     $(document).on("click", ".directBtn", function () {
        
+       map.remove()
+
+       $("#stationField").empty()
+
+        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+        L.mapquest.geocoding().geocode(startAddress, createMap);
+
+        function createMap(error, response) {
+          var location = response.results[0].locations[0];
+          var latLng = location.displayLatLng;
+          L.mapquest.map('map', {
+            center: latLng,
+            layers: L.mapquest.tileLayer('light'),
+            zoom: 14
+          });
+        }
+
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
 
         //Need to figure out how to delete old route when new route is put in
-        map.addControl(L.mapquest.control());
 
         L.mapquest.directions().route({
             start: startAddress,
