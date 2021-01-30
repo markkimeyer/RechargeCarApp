@@ -1,0 +1,171 @@
+html { 
+    background-image: url(https://www.itl.cat/pngfile/big/299-2992292_electric-wallpapers-pc-electricity-background-picture-cool.jpg);
+}
+
+/* #headerBox{
+    background-color: black;
+    width: 1000px;
+    height: 100px;
+    margin-top: -10px;
+    margin-left: 100px;
+    margin-right: 50px;
+} */
+
+.welcome {
+    background-color: black;
+    outline;
+    color: white;
+    margin: 20px 60px;
+    text-align: center;
+    
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    
+}
+
+.welcomeHeader {
+    font-size: 20px;
+    margin: 0px 200px;
+}
+
+#header{
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 60px;
+    background-image: url("/HTML-Assets/assets/pictures/header.png")
+}
+
+#mapInputBox {
+    width: 500px;
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: transparent;
+    padding: 10px;
+    
+}
+
+#stationCardsCard {
+    background-color: transparent;
+    height: auto;
+    margin-right: 50px;
+    position: relative;
+
+}
+
+.is-warning {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#addressInput {
+    width: 450px;
+}
+
+#postalZipInput, #countryInput {
+    width: 150px;
+}
+
+
+#userSubmit {
+    margin-top: 10px;
+}
+
+
+.button {
+    margin-top: 2px;
+    height: 35px
+}
+
+
+.modal-card {
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.modal-background {
+    height: 25%;
+}
+
+#mapBox {
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: -100px;
+}
+
+#map {
+    margin: auto;
+}
+
+#station {
+    width: 500px;
+    height: 180px;
+    margin: 2px;
+    font-size:small;
+    
+}
+
+.directBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    #mapInputBox {
+         width: 250px;
+         margin-top: 25px;
+         margin-right: 50px;
+         margin-left: 25px;
+         background-color:transparent;
+         padding: 10px;
+         
+     }
+
+    .is-warning {
+        width: 150px;
+        margin-top: 10px;
+    }
+    
+    #addressInput {
+        width: 225px;
+    }
+    
+    #postalZipInput, #countryInput {
+        width: 75px;
+    }
+    
+    #userSubmit {
+        margin-top: 10px;
+    }
+
+    #station {
+    width: 250px;
+    height: 90px;
+    margin: 2px;
+    font-size:small;
+    }
+
+    .directBtn {
+        position: absolute;
+        width: 75px;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 10px;
+
+}
+
+}
+
+#cardDisplay{
+    opacity: 100%;
+    margin-top: 5px;
+    background-color: transparent;
+}
