@@ -175,7 +175,7 @@ window.onload = function () {
        
        map.remove()
 
-       $("#stationField").empty()
+    //    $("#stationField").empty()
 
         L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 

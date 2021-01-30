@@ -14,10 +14,15 @@
 
 <body>
 
-    <div id="headerBox">
         <div id="header">
-            <h1>Recharge</h1>
+            <i class="fas fa-bolt"></i><h1>Recharge</h1><i class="fas fa-bolt"></i>
         </div>
+
+
+
+    <div class="welcome">
+        <h2>Welcome to Recharge!</h2>
+        <h3>Have an electric car? Not sure where to charge it? Just put your location information in the fields below and we'll find your nearest station!</h3>
     </div>
 
     <div class="columns is-mobile">
@@ -33,7 +38,9 @@
                 <button id="userSubmit" class="button is-black">Submit!</button>
             </div>
             
-            <article class="field" id="stationField"></article>
+            <article class="card is-rounded is-mobile" id="stationCardsCard" style="display:visible">
+            <div class="field card-content" id="stationField"></div>
+            </article>
          </section>   
         
          <section class="column" id="mapColumn">
