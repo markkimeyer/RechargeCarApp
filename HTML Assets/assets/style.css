@@ -1,11 +1,6 @@
-#header{
-    text-align: center;
-    color: white;
-    padding: 10px;
-    font-size: 60px;
-}
 
-body, html {
+
+html {
     background-color: rgb(34, 79, 118);
 }
 
@@ -18,29 +13,57 @@ body, html {
     margin-right: 50px;
 }
 
-.is-warning {
-    width: 500px;
-    margin-top: 5px;
-    display: block;
+#header{
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 60px;
 }
+
+#mapInputBox {
+    width: 500px;
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+    
+}
+
+#userSubmit {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#stationField{
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: white;
+    padding: 10px;
+
+}
+
+.is-warning {
+    width: 300px;
+    margin-top: 10px;
+}
+
+#addressInput {
+    width: 450px;
+}
+
+#postalZipInput, #countryInput {
+    width: 150px;
+}
+
+
 
 .button {
     margin-top: 2px;
     height: 35px
 }
 
-.box {
-    height: 200px;
-    width: 500px;
-    margin-left: 15px;
-    margin-top: 15px;
-}
-
-.label {
-    margin-top: -20px;
-    margin-left: -20px;
-    color: black;
-}
 
 .modal-card {
     font-size: 40px;
@@ -51,17 +74,24 @@ body, html {
     height: 25%;
 }
 
+#mapBox {
+    margin-top: 50px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    margin-left: -100px;
+}
+
 #map {
-    margin: 0 auto;
+    margin: auto;
 }
 
 #station {
     float: left;
-    width: 190px;
-    height: 300px;
+    width: 180px;
+    height: 250px;
     position: relative;
     margin: 2px;
-    margin-bottom: 10px;
+    font-size:small
 }
 
 .directBtn {
