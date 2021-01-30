@@ -1,6 +1,5 @@
-html {
-    background-color: rgb(34, 79, 118);
-    background-image: url(https://previews.123rf.com/images/cappan/cappan1410/cappan141000009/32339612-blue-electric-lighting-abstract-electrical-background.jpg);
+html { 
+    background-image: url(https://www.itl.cat/pngfile/big/299-2992292_electric-wallpapers-pc-electricity-background-picture-cool.jpg);
 }
 
 /* #headerBox{
@@ -14,8 +13,10 @@ html {
 
 .welcome {
     background-color: black;
+    outline;
     color: white;
     margin: 20px 60px;
+    text-align: center;
     
 }
 
@@ -35,7 +36,7 @@ h2 {
     color: white;
     padding: 10px;
     font-size: 60px;
-    background-color: black;
+    background-image: url("/HTML-Assets/assets/pictures/header.png")
 }
 
 #mapInputBox {
@@ -43,13 +44,13 @@ h2 {
     margin-top: 50px;
     margin-right: 100px;
     margin-left: 25px;
-    background-color: rgb(34, 79, 118);
+    background-color: transparent;
     padding: 10px;
     
 }
 
 #stationCardsCard {
-    background-color: rgb(34, 79, 118);
+    background-color: transparent;
     height: auto;
     margin-right: 50px;
     position: relative;
@@ -123,7 +124,7 @@ h2 {
          margin-top: 25px;
          margin-right: 50px;
          margin-left: 25px;
-         background-color: rgb(34, 79, 118);
+         background-color:transparent;
          padding: 10px;
          
      }
@@ -161,4 +162,10 @@ h2 {
 
 }
 
+}
+
+#cardDisplay{
+    opacity: 100%;
+    margin-top: 5px;
+    background-color: transparent;
 }
