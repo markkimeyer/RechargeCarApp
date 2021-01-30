@@ -1,5 +1,7 @@
 html { 
     background-image: url(https://www.itl.cat/pngfile/big/299-2992292_electric-wallpapers-pc-electricity-background-picture-cool.jpg);
+    background-position: -10px;
+
 }
 
 /* #headerBox{
@@ -12,7 +14,7 @@ html {
 } */
 
 .welcome {
-    background-color: black;
+    background-color: transparent;
     outline;
     color: white;
     margin: 20px 60px;
@@ -36,7 +38,7 @@ h2 {
     color: white;
     padding: 10px;
     font-size: 60px;
-    background-image: url("/HTML-Assets/assets/pictures/header.png")
+
 }
 
 #mapInputBox {
