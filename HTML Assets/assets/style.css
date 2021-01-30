@@ -27,7 +27,7 @@ h2 {
 .welcomeHeader {
     font-size: 20px;
     margin: 0px 200px;
-} */
+} 
 
 #header{
     text-align: center;
@@ -85,10 +85,11 @@ h2 {
 .modal-card {
     font-size: 40px;
     margin-top: 50px;
+    text-align: center;
 }
 
 .modal-background {
-    height: 25%;
+    height: 35%;
 }
 
 #mapBox {

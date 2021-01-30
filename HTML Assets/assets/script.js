@@ -9,7 +9,7 @@ window.onload = function () {
 
     var map = L.mapquest.map('map', {
         center: [34.05513, -118.25703],
-        layers: L.mapquest.tileLayer('light'),
+        layers: L.mapquest.tileLayer('hybrid'),
         zoom: 9
     });
 
@@ -76,8 +76,6 @@ window.onload = function () {
     //Function to return info from latitude and longitude
     function getMapInfo(latitude, longitude) {
 
-        $(".field").empty()
-
         var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
 
         $.ajax({
@@ -90,7 +88,7 @@ window.onload = function () {
 
             map = L.mapquest.map('map', {
                 center: [latitude, longitude],
-                layers: L.mapquest.tileLayer('light'),
+                layers: L.mapquest.tileLayer('hybrid'),
                 zoom: 11
             });
 
@@ -121,25 +119,25 @@ window.onload = function () {
                 sTown.html(stationTown + ", " + stationState + " " + stationZip);
                 stationDiv.append(sTown);
 
-                if (stationURL !== null || stationURl == "") {
+                if (stationURL !== null && stationURL !== "") {
                     var sWebsite = $("<p class='website'>")
                     sWebsite.html("<b>Website: </b>" + stationURL);
                     stationDiv.append(sWebsite);
                 }
 
-                if (stationPhone !== null || stationPhone !== "") {
+                if (stationPhone !== null && stationPhone !== "") {
                     var sPhone = $("<p class='phone'>")
                     sPhone.html("<b>Phone: </b>" + stationPhone);
                     stationDiv.append(sPhone);
                 }
 
-                if (stationComments !== null || stationComments !== "") {
+                if (stationComments !== null && stationComments !== "") {
                     var sComments = $("<p class='comments'>")
                     sComments.html("<b>Comments: </b>" + stationComments);
                     stationDiv.append(sComments);
                 }
 
-                if (stationStatus !== "Unknown" || stationStatus !== "") {
+                if (stationStatus !== "(Unknown)") {
                     var sStatus = $("<p class='status'>")
                     sStatus.html("<b>Status: </b>" + stationStatus);
                     stationDiv.append(sStatus);
@@ -170,42 +168,9 @@ window.onload = function () {
 
     }
 
-    //Onclick event to render directions to map
-    $(document).on("click", ".directBtn", function () {
-       
-       map.remove()
-
-    //    $("#stationField").empty()
-
-        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
-
-        L.mapquest.geocoding().geocode(startAddress, createMap);
-
-        function createMap(error, response) {
-          var location = response.results[0].locations[0];
-          var latLng = location.displayLatLng;
-          L.mapquest.map('map', {
-            center: latLng,
-            layers: L.mapquest.tileLayer('light'),
-            zoom: 14
-          });
-        }
-
-        var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
-
-        //Need to figure out how to delete old route when new route is put in
-
-        L.mapquest.directions().route({
-            start: startAddress,
-            end: endAddress,
-        });
-
-
-    })
 
     //Onclick function that retrieves radar and open charger objects
     $("#userSubmit").on("click", function () {
-
 
         var radarURL = buildQueryURL();
 
@@ -214,15 +179,25 @@ window.onload = function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
             }, success: function (data) {
-                map.remove()
 
-                var lat = data.addresses[0].latitude;
-                var long = data.addresses[0].longitude;
+                if (data.addresses.length == 0) {
+                    $(".modal").addClass("is-active");
 
-                console.log(lat + " " + long);
+                    $(".modal-close").click(function () {
+                        $(".modal").removeClass("is-active");
 
-                getMapInfo(lat, long);
+                    });
 
+                } else {
+                    map.remove()
+                    $(".field").empty()
+
+                    lat = data.addresses[0].latitude;
+                    long = data.addresses[0].longitude;
+
+
+                    getMapInfo(lat, long);
+                }
 
             }, error: function (jqXHR) {
                 console.log(jqXHR)
@@ -231,11 +206,22 @@ window.onload = function () {
 
                 $(".modal-close").click(function () {
                     $(".modal").removeClass("is-active");
-                   
+
                 });
             }
 
         })
+    })
+
+    $(document).on("click", ".directBtn", function () {
+
+        var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
+
+        L.mapquest.directions().route({
+            start: startAddress,
+            end: endAddress,
+        })
+
     })
 
 }
