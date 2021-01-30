@@ -121,25 +121,25 @@ window.onload = function () {
                 sTown.html(stationTown + ", " + stationState + " " + stationZip);
                 stationDiv.append(sTown);
 
-                if (stationURL !== null) {
+                if (stationURL !== null || stationURl == "") {
                     var sWebsite = $("<p class='website'>")
                     sWebsite.html("<b>Website: </b>" + stationURL);
                     stationDiv.append(sWebsite);
                 }
 
-                if (stationPhone !== null) {
+                if (stationPhone !== null || stationPhone !== "") {
                     var sPhone = $("<p class='phone'>")
                     sPhone.html("<b>Phone: </b>" + stationPhone);
                     stationDiv.append(sPhone);
                 }
 
-                if (stationComments !== null) {
+                if (stationComments !== null || stationComments !== "") {
                     var sComments = $("<p class='comments'>")
                     sComments.html("<b>Comments: </b>" + stationComments);
                     stationDiv.append(sComments);
                 }
 
-                if (stationStatus !== "Unknown") {
+                if (stationStatus !== "Unknown" || stationStatus !== "") {
                     var sStatus = $("<p class='status'>")
                     sStatus.html("<b>Status: </b>" + stationStatus);
                     stationDiv.append(sStatus);
