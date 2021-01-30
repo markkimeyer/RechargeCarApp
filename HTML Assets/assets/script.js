@@ -13,15 +13,10 @@ window.onload = function () {
         zoom: 9
     });
 
-
-
     //Function to take inputs and put them in the queryURL
     function buildQueryURL() {
 
-
         var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
-
-
 
         //Value is a placeholder. Will be changed once input fields are created.
         var address = $("#addressInput").val();
@@ -173,11 +168,10 @@ window.onload = function () {
         })
 
     }
+
     $(document).on("click", ".directBtn", function () {
-
-
+       
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
-        console.log(endAddress);
 
         //Need to figure out how to delete old route when new route is put in
         map.addControl(L.mapquest.control());
@@ -189,7 +183,6 @@ window.onload = function () {
 
 
     })
-
 
     //Onclick function that retrieves radar and open charger objects
     $("#userSubmit").on("click", function () {
@@ -219,7 +212,7 @@ window.onload = function () {
 
                 $(".modal-close").click(function () {
                     $(".modal").removeClass("is-active");
-
+                   
                 });
             }
 
