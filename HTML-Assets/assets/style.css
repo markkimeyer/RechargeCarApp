@@ -108,6 +108,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.clearBtn {
+    float: right;
+}
+
 @media screen and (max-width: 1000px) {
     
     #mapInputBox {

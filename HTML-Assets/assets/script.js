@@ -168,9 +168,10 @@ window.onload = function () {
 
     }
 
-
     //Onclick function that retrieves radar and open charger objects
-    $("#userSubmit").on("click", function () {
+    $(document).on("click", "#userSubmit", function () {
+
+        $(".clearBtn").attr("style", "display: none");
 
         var radarURL = buildQueryURL();
 
@@ -214,6 +215,8 @@ window.onload = function () {
     })
 
     $(document).on("click", ".directBtn", function () {
+
+        $(".clearBtn").attr("style", "display: visible"); 
 
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
 
