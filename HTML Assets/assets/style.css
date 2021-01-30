@@ -25,7 +25,7 @@ h2 {
     
 }
 
-h3 {
+.welcomeHeader {
     font-size: 20px;
     margin: 0px 200px;
 }
@@ -39,13 +39,21 @@ h3 {
 }
 
 #mapInputBox {
-   /* width: 500px;
+    width: 500px;
     margin-top: 50px;
     margin-right: 100px;
-    margin-left: 25px; */
+    margin-left: 25px;
     background-color: rgb(34, 79, 118);
     padding: 10px;
     
+}
+
+#stationCardsCard {
+    background-color: rgb(34, 79, 118);
+    height: auto;
+    margin-right: 50px;
+    position: relative;
+
 }
 
 .is-warning {
@@ -62,72 +70,9 @@ h3 {
 }
 
 
-
-#stationCardsCard {
-    background-color: rgb(34, 79, 118);
-    height: auto;
-    margin-right: 50px;
-    position: relative;
-
-}
-
-/*#stationField {
-    margin-top: 50px;
-    margin-right: 100px;
-    margin-left: 25px;
-    background-color: rgb(34, 79, 118);
-    padding: 10px;
-} */
-
 #userSubmit {
     margin-top: 10px;
 }
-
-#addressInput {
-    width: 450px;
-}
-
-#postalZipInput, #countryInput {
-    width: 150px;
-}
-
-
-
-#stationCardsCard {
-    background-color: rgb(34, 79, 118);
-    height: auto;
-    margin-right: 50px;
-    position: relative;
-
-}
-
-/*#stationField {
-    margin-top: 50px;
-    margin-right: 100px;
-    margin-left: 25px;
-    background-color: rgb(34, 79, 118);
-    padding: 10px;
-
-} 
-
-} */
-
-#userSubmit {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-#stationField{
-    margin-top: 50px;
-    margin-right: 100px;
-    margin-left: 25px;
-    background-color: rgb(34, 79, 118);
-    padding: 10px;
-
-} 
-
-
-
 
 
 .button {
@@ -167,8 +112,53 @@ h3 {
 .directBtn {
     position: absolute;
     bottom: 0;
+    right: 0;
     margin-bottom: 10px;
-    margin-left: 350px;
 }
 
+@media screen and (max-width: 1000px) {
+    
+    #mapInputBox {
+         width: 250px;
+         margin-top: 25px;
+         margin-right: 50px;
+         margin-left: 25px;
+         background-color: rgb(34, 79, 118);
+         padding: 10px;
+         
+     }
 
+    .is-warning {
+        width: 150px;
+        margin-top: 10px;
+    }
+    
+    #addressInput {
+        width: 225px;
+    }
+    
+    #postalZipInput, #countryInput {
+        width: 75px;
+    }
+    
+    #userSubmit {
+        margin-top: 10px;
+    }
+
+    #station {
+    width: 250px;
+    height: 90px;
+    margin: 2px;
+    font-size:small;
+    }
+
+    .directBtn {
+        position: absolute;
+        width: 75px;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 10px;
+
+}
+
+}
