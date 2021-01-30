@@ -1,5 +1,6 @@
 html {
     background-color: rgb(34, 79, 118);
+    background-image: url(https://previews.123rf.com/images/cappan/cappan1410/cappan141000009/32339612-blue-electric-lighting-abstract-electrical-background.jpg);
 }
 
 /* #headerBox{
@@ -24,10 +25,10 @@ h2 {
     
 }
 
-.welcomeHeader {
+h3 {
     font-size: 20px;
     margin: 0px 200px;
-} */
+}
 
 #header{
     text-align: center;
@@ -38,10 +39,10 @@ h2 {
 }
 
 #mapInputBox {
-   width: 500px;
+   /* width: 500px;
     margin-top: 50px;
     margin-right: 100px;
-    margin-left: 25px;
+    margin-left: 25px; */
     background-color: rgb(34, 79, 118);
     padding: 10px;
     
@@ -60,6 +61,8 @@ h2 {
     width: 150px;
 }
 
+
+
 #stationCardsCard {
     background-color: rgb(34, 79, 118);
     height: auto;
@@ -68,13 +71,64 @@ h2 {
 
 }
 
-#station {
-    /* width: 500px;
-    height: 180px; */
-    margin: 2px;
-    font-size:small;
-    
+/*#stationField {
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+} */
+
+#userSubmit {
+    margin-top: 10px;
 }
+
+#addressInput {
+    width: 450px;
+}
+
+#postalZipInput, #countryInput {
+    width: 150px;
+}
+
+
+
+#stationCardsCard {
+    background-color: rgb(34, 79, 118);
+    height: auto;
+    margin-right: 50px;
+    position: relative;
+
+}
+
+/*#stationField {
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+
+} 
+
+} */
+
+#userSubmit {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#stationField{
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+
+} 
+
+
+
+
 
 .button {
     margin-top: 2px;
@@ -102,40 +156,19 @@ h2 {
     margin: auto;
 }
 
+#station {
+    width: 500px;
+    height: 180px;
+    margin: 2px;
+    font-size:small;
+    
+}
+
 .directBtn {
     position: absolute;
     bottom: 0;
-    right: 0;
     margin-bottom: 10px;
-    margin-right: 5px;
-    margin-left: auto;
+    margin-left: 350px;
 }
 
 
-@media screen and (max-width:1000px) {
-    #mapInputBox {
-        width: 250px;
-         margin-top: 25px;
-         margin-right: 50px;
-         margin-left: 25px;
-         background-color: rgb(34, 79, 118);
-         padding: 10px;
-         
-     }
-     
-     .is-warning {
-         width: 150px;
-         margin-top: 10px;
-     }
-     
-     #addressInput {
-         width: 225px;
-     }
-     
-     #postalZipInput, #countryInput {
-         width: 75px;
-     }
-
-     
-     
-}
