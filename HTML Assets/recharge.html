@@ -14,11 +14,9 @@
 
 <body>
 
-    <div id="headerBox">
         <div id="header">
             <h1>Recharge</h1>
         </div>
-    </div>
 
     <div class="columns is-mobile">
          <section class="column">
@@ -33,7 +31,9 @@
                 <button id="userSubmit" class="button is-black">Submit!</button>
             </div>
             
-            <article class="field" id="stationField"></article>
+            <article class="card is-rounded is-mobile" id="stationCardsCard" style="display:visible">
+            <div class="field card-content" id="stationField"></div>
+            </article>
          </section>   
         
          <section class="column" id="mapColumn">

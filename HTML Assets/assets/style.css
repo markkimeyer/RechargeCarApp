@@ -3,14 +3,14 @@ html {
     background-color: rgb(34, 79, 118);
 }
 
-#headerBox{
+/* #headerBox{
     background-color: black;
     width: 1000px;
     height: 100px;
     margin-top: -10px;
     margin-left: 100px;
     margin-right: 50px;
-}
+} */
 
 #header{
     text-align: center;
@@ -20,27 +20,13 @@ html {
 }
 
 #mapInputBox {
-    width: 500px;
+   /* width: 500px;
     margin-top: 50px;
     margin-right: 100px;
-    margin-left: 25px;
+    margin-left: 25px; */
     background-color: rgb(34, 79, 118);
     padding: 10px;
     
-}
-
-#userSubmit {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-#stationField{
-    margin-top: 50px;
-    margin-right: 100px;
-    margin-left: 25px;
-    background-color: white;
-    padding: 10px;
-
 }
 
 .is-warning {
@@ -55,6 +41,41 @@ html {
 #postalZipInput, #countryInput {
     width: 150px;
 }
+
+
+
+#stationCardsCard {
+    background-color: rgb(34, 79, 118);
+    height: auto;
+    margin-right: 50px;
+    position: relative;
+
+}
+
+/*#stationField {
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+
+} */
+
+#userSubmit {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#stationField{
+    margin-top: 50px;
+    margin-right: 100px;
+    margin-left: 25px;
+    background-color: rgb(34, 79, 118);
+    padding: 10px;
+
+} 
+
+
 
 
 
@@ -85,16 +106,17 @@ html {
 }
 
 #station {
-    float: left;
-    width: 180px;
-    height: 250px;
-    position: relative;
+    width: 500px;
+    height: 180px;
     margin: 2px;
-    font-size:small
+    font-size:small;
+    
 }
 
 .directBtn {
     position: absolute;
     bottom: 0;
     margin-bottom: 10px;
+    margin-left: 350px;
 }
+
