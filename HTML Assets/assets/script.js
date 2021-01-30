@@ -13,15 +13,10 @@ window.onload = function () {
         zoom: 9
     });
 
-
-
     //Function to take inputs and put them in the queryURL
     function buildQueryURL() {
 
-
         var queryURL = 'https://api.radar.io/v1/geocode/forward?query=';
-
-
 
         //Value is a placeholder. Will be changed once input fields are created.
         var address = $("#addressInput").val();
@@ -166,6 +161,7 @@ window.onload = function () {
                 L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
+                    zoom: 14
                 }).bindPopup(stationName).addTo(map);
 
             }
@@ -173,14 +169,31 @@ window.onload = function () {
         })
 
     }
-    $(document).on("click", ".directBtn", function () {
 
+    //Onclick event to render directions to map
+    $(document).on("click", ".directBtn", function () {
+       
+       map.remove()
+
+       $("#stationField").empty()
+
+        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+
+        L.mapquest.geocoding().geocode(startAddress, createMap);
+
+        function createMap(error, response) {
+          var location = response.results[0].locations[0];
+          var latLng = location.displayLatLng;
+          L.mapquest.map('map', {
+            center: latLng,
+            layers: L.mapquest.tileLayer('light'),
+            zoom: 14
+          });
+        }
 
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
-        console.log(endAddress);
 
         //Need to figure out how to delete old route when new route is put in
-        map.addControl(L.mapquest.control());
 
         L.mapquest.directions().route({
             start: startAddress,
@@ -189,7 +202,6 @@ window.onload = function () {
 
 
     })
-
 
     //Onclick function that retrieves radar and open charger objects
     $("#userSubmit").on("click", function () {
@@ -219,7 +231,7 @@ window.onload = function () {
 
                 $(".modal-close").click(function () {
                     $(".modal").removeClass("is-active");
-
+                   
                 });
             }
 
