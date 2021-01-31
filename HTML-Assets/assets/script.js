@@ -1,10 +1,8 @@
 
-
 //Necessary to wrap whole page in this function for MapQuest needs
 window.onload = function () {
 
     var startAddress = "";
-    var currentMap;
 
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
     L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
@@ -150,16 +148,14 @@ window.onload = function () {
                 sButton.text("Get Directions!");
                 stationDiv.append(sButton);
 
-
                 $(".field").append(stationDiv);
-
 
                 //For Mapquest API
                 var stationLat = station.AddressInfo.Latitude;
                 var stationLong = station.AddressInfo.Longitude;
 
                 //puts pins in map for locations
-               var currentMap = L.marker([stationLat, stationLong], {
+               L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
                     zoom: 14
@@ -174,8 +170,10 @@ window.onload = function () {
     //Onclick function that retrieves radar and open charger objects
     $(document).on("click", "#userSubmit", function () {
        
+        //Resets address in case user submits again before refresh
         startAddress = "";
 
+        //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
 
         var radarURL = buildQueryURL();
@@ -227,10 +225,12 @@ window.onload = function () {
 
         L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
-        console.log(mapDirect(startAddress, endAddress));
+        //Function call to render directions
+        mapDirect(startAddress, endAddress);
 
     })
 
+    //This fuction is necessary because it keeps the deployed page from running a CORS error.
     function mapDirect (start, end) {
     L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
     var call = L.mapquest.directions().route({
