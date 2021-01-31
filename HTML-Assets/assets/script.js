@@ -1,9 +1,9 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://markkimeyer.github.io/FrasierProject1/"; // site that doesn’t send Access-Control-*
-fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-.then(response => response.text())
-.then(contents => console.log(contents))
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+// const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// const url = "https://markkimeyer.github.io/FrasierProject1/"; // site that doesn’t send Access-Control-*
+// fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+// .then(response => response.text())
+// .then(contents => console.log(contents))
+// .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
 //Necessary to wrap whole page in this function for MapQuest needs
 window.onload = function () {
@@ -226,6 +226,8 @@ window.onload = function () {
         $(".clearBtn").attr("style", "display: visible"); 
 
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
+
+        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
         L.mapquest.directions().route({
             start: startAddress,
