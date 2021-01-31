@@ -4,6 +4,7 @@
 window.onload = function () {
 
     var startAddress = "";
+    var currentMap;
 
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
     L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
@@ -158,7 +159,7 @@ window.onload = function () {
                 var stationLong = station.AddressInfo.Longitude;
 
                 //puts pins in map for locations
-                L.marker([stationLat, stationLong], {
+               var currentMap = L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
                     zoom: 14
@@ -173,6 +174,7 @@ window.onload = function () {
     //Onclick function that retrieves radar and open charger objects
     $(document).on("click", "#userSubmit", function () {
        
+        startAddress = "";
 
         $(".clearBtn").attr("style", "display: none");
 
@@ -225,11 +227,7 @@ window.onload = function () {
 
         L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
-        mapDirect(startAddress, endAddress);
-        // L.mapquest.directions().route({
-        //     start: startAddress,
-        //     end: endAddress,
-        // })
+        console.log(mapDirect(startAddress, endAddress));
 
     })
 
@@ -242,4 +240,5 @@ window.onload = function () {
 
     return "https://cors-anywhere.herokuapp.com/" + call
     }
+
 }
