@@ -6,7 +6,7 @@ window.onload = function () {
     var startAddress = "";
 
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
-    L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+    L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
 
     var map = L.mapquest.map('map', {
@@ -86,7 +86,7 @@ window.onload = function () {
         }).then(function (response) {
             console.log(response);
 
-            L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+            L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
             map = L.mapquest.map('map', {
                 center: [latitude, longitude],
@@ -201,7 +201,6 @@ window.onload = function () {
 
 
                     getMapInfo(lat, long);
-                    $(".input").val("")
                 }
 
             }, error: function (jqXHR) {
@@ -224,13 +223,23 @@ window.onload = function () {
 
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
 
-        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
+        L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
-        L.mapquest.directions().route({
-            start: startAddress,
-            end: endAddress,
-        })
+        mapDirect(startAddress, endAddress);
+        // L.mapquest.directions().route({
+        //     start: startAddress,
+        //     end: endAddress,
+        // })
 
     })
 
+    function mapDirect (start, end) {
+    L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
+    var call = L.mapquest.directions().route({
+        start: start,
+        end: end,
+    })
+
+    return "https://cors-anywhere.herokuapp.com/" + call
+    }
 }
