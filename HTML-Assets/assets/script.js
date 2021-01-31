@@ -172,6 +172,7 @@ window.onload = function () {
 
     //Onclick function that retrieves radar and open charger objects
     $(document).on("click", "#userSubmit", function () {
+       
 
         $(".clearBtn").attr("style", "display: none");
 
@@ -200,6 +201,7 @@ window.onload = function () {
 
 
                     getMapInfo(lat, long);
+                    $(".input").val("")
                 }
 
             }, error: function (jqXHR) {
@@ -218,16 +220,9 @@ window.onload = function () {
 
     $(document).on("click", ".directBtn", function () {
 
-        $(".clearBtn").attr("style", "display: visible"); 
+        $(".clearBtn").attr("style", "display: visible");
 
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
-
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://markkimeyer.github.io/FrasierProject1/"; // site that doesn’t send Access-Control-*
-fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-.then(response => response.text())
-.then(contents => console.log(contents))
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
         L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
