@@ -50,11 +50,8 @@ h3 {
     margin-top: 50px;
     margin-right: 100px;
     margin-left: 25px;
-    background-color: rgb(207, 10, 165);
-    padding: 10px;
-    border: solid 5px black;
-
-    
+    background-color: rgb(207, 10, 165, 0.1);
+    padding: 10px;   
 }
 
 #stationCardsCard {
@@ -62,29 +59,29 @@ h3 {
     height: auto;
     margin-right: 50px;
     position: relative;
-    
-
 }
 
 .warning {
-    width: 300px;
     margin-top: 10px;
     border: solid 1px black;
 }
-
-
 
 #addressInput {
     width: 450px;
 }
 
 #postalZipInput, #countryInput {
-    width: 150px;
+    width: 175px;
+}
+
+#cityInput, #stateInput {
+    width: 250px;
 }
 
 .select {
-margin-top: 10px;
-border: solid 1px black;
+    margin-top: 10px;
+    margin-left: 255px;
+    bottom: 50px;
 }
 
 #userSubmit {
@@ -96,8 +93,6 @@ border: solid 1px black;
     font-size: 16px;
     background-color: transparent;
 }
-
-
 
 .modal-card {
     font-size: 25px;
