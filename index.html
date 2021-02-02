@@ -12,6 +12,8 @@
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,8 +25,7 @@
 
 
     <div class="welcome">
-        <h2>Welcome to Recharge!</h2>
-        <h3 class="welcomeHeader">Have an electric car? Not sure where to charge it? Just put your location information
+        <h3 class="welcomeHeader">Welcome to Recharge! Have an electric car? Not sure where to charge it? Just put your location information
             in the fields below and we'll find your nearest station! See which one is best for you and click "Get
             Directions!" to gear up and go.</h3>
     </div>
@@ -32,15 +33,17 @@
     <div class="columns is-mobile">
         <section class="column">
             <div class="card is-rounded" id="mapInputBox">
-                <input class="input is-warning is-rounded" type="text" placeholder="Address" id="addressInput">
+            <h2>Enter Address Details    <i class="fa fa-question-circle" id = "info"></i></h2>
+                <input class="input warning" type="text" placeholder="Address" id="addressInput">
+                <input class="input warning" type="text" placeholder="City" id="cityInput">
+                <input class="input warning" type="text" placeholder="State" id="stateInput">
+                <input class="input warning" type="text" placeholder="Postal/Zip Code" id="postalZipInput">
+            
+                <input class="input warning" type="text" placeholder="Country" id="countryInput">
                 <br>
-                <input class="input is-warning is-rounded" type="text" placeholder="City " id="cityInput">
-                <input class="input is-warning is-rounded" type="text" placeholder="Postal/Zip Code"
-                    id="postalZipInput">
-                <input class="input is-warning is-rounded" type="text" placeholder="State" id="stateInput">
-                <input class="input is-warning is-rounded" type="text" placeholder="Country" id="countryInput">
-                <br>
-                <button id="userSubmit" class="button is-black">Submit!</button>
+                <button id="userSubmit" class="button is-black">Search</button>
+            
+                <button id="clear" class="button is-black">Start Over</button>
             </div>
 
             <article class="card is-rounded is-mobile" id="stationCardsCard" style="display:visible">
@@ -60,8 +63,8 @@
     </div>
 
 
-    <!--Code for Modal-->
-    <div class="modal">
+    <!--Code for Error Modal-->
+    <div id = "Modal" class="modal">
         <div class="modal-background">
             <div class="modal-card">
                 <div class="modal-card-body">

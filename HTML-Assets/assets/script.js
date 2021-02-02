@@ -175,6 +175,7 @@ window.onload = function () {
 
         //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
+        
 
         var radarURL = buildQueryURL();
 
@@ -185,10 +186,10 @@ window.onload = function () {
             }, success: function (data) {
 
                 if (data.addresses.length == 0) {
-                    $(".modal").addClass("is-active");
+                    $("#Modal").addClass("is-active");
 
-                    $(".modal-close").click(function () {
-                        $(".modal").removeClass("is-active");
+                    $("#Modal-close").click(function () {
+                        $("#Modal").removeClass("is-active");
 
                     });
 
@@ -220,7 +221,6 @@ window.onload = function () {
     $(document).on("click", ".directBtn", function () {
 
         $(".clearBtn").attr("style", "display: visible");
-
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
 
         L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
@@ -229,10 +229,16 @@ window.onload = function () {
         mapDirect(startAddress, endAddress);
 
     })
-
+//new search button 
     $(document).on("click", "#clear", function () {
         window.location.reload();
     })
+
+//info button 
+$(document).on("click", "#info", function () {
+    alert("You can enter as many or few details as you'd like!");
+})
+
 
     //This fuction is necessary because it keeps the deployed page from running a CORS error.
     function mapDirect (start, end) {
