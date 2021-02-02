@@ -72,6 +72,11 @@ h3 {
     border: solid 1px black;
 }
 
+.select {
+    margin-top: 10px;
+    border: solid 1px black;
+}
+
 #addressInput {
     width: 450px;
 }

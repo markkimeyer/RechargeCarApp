@@ -148,7 +148,7 @@ window.onload = function () {
                 sButton.text("Get Directions!");
                 stationDiv.append(sButton);
 
-                $(".field").append(stationDiv);
+                $(".card-content").append(stationDiv);
 
                 //For Mapquest API
                 var stationLat = station.AddressInfo.Latitude;
@@ -194,7 +194,7 @@ window.onload = function () {
 
                 } else {
                     map.remove()
-                    $(".field").empty()
+                    $(".card-content").empty()
 
                     lat = data.addresses[0].latitude;
                     long = data.addresses[0].longitude;
