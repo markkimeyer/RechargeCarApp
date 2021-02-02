@@ -85,7 +85,7 @@ h3 {
     margin-top: 10px;
 }
 
-#clear {
+#newSearch {
     margin-top: 10px; 
     float: right;
 }
@@ -136,9 +136,6 @@ h3 {
     background-color: rgb(54, 51, 233);
 }
 
-.clearBtn {
-    margin: 0 auto;
-}
 
 @media screen and (max-width: 1000px) {
     

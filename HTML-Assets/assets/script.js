@@ -230,7 +230,7 @@ window.onload = function () {
 
     })
 //new search button 
-    $(document).on("click", "#clear", function () {
+    $(document).on("click", "#newSearch", function () {
         window.location.reload();
     })
 
