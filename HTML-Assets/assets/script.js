@@ -108,7 +108,7 @@ window.onload = function () {
 
                 var stationDiv = $("<div class='card' id='station'>")
 
-                var sName = $("<h3>class='card-header-title'>");
+                var sName = $("<h3 class='card-header-title'>");
                 sName.html(stationName);
                 stationDiv.append(sName);
 
@@ -175,7 +175,6 @@ window.onload = function () {
 
         //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
-        
 
         var radarURL = buildQueryURL();
 
@@ -186,10 +185,10 @@ window.onload = function () {
             }, success: function (data) {
 
                 if (data.addresses.length == 0) {
-                    $("#Modal").addClass("is-active");
+                    $(".errorAlert").addClass("is-active");
 
-                    $("#Modal-close").click(function () {
-                        $("#Modal").removeClass("is-active");
+                    $(".modal-close").click(function () {
+                        $(".errorAlert").removeClass("is-active");
 
                     });
 
@@ -207,10 +206,10 @@ window.onload = function () {
             }, error: function (jqXHR) {
                 console.log(jqXHR)
 
-                $(".modal").addClass("is-active");
+                $(".errorAlert").addClass("is-active");
 
                 $(".modal-close").click(function () {
-                    $(".modal").removeClass("is-active");
+                    $(".errorAlert").removeClass("is-active");
 
                 });
             }
@@ -221,6 +220,7 @@ window.onload = function () {
     $(document).on("click", ".directBtn", function () {
 
         $(".clearBtn").attr("style", "display: visible");
+
         var endAddress = $(this).parent().children(".address").text() + " " + $(this).parent().children(".town").text()
 
         L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
@@ -229,16 +229,21 @@ window.onload = function () {
         mapDirect(startAddress, endAddress);
 
     })
-//new search button 
+
+    //new search button 
     $(document).on("click", "#newSearch", function () {
         window.location.reload();
     })
 
 //info button 
 $(document).on("click", "#info", function () {
-    alert("You can enter as many or few details as you'd like!");
-})
+    $(".infoAlert").addClass("is-active");
 
+                $(".modal-close").click(function () {
+                    $(".infoAlert").removeClass("is-active");
+
+                });;
+})
 
     //This fuction is necessary because it keeps the deployed page from running a CORS error.
     function mapDirect (start, end) {
