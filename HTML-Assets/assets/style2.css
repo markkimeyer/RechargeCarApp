@@ -82,6 +82,10 @@ h3 {
     width: 150px;
 }
 
+.select {
+margin-top: 10px;
+border: solid 1px black;
+}
 
 #userSubmit {
     margin-top: 10px;
@@ -93,10 +97,7 @@ h3 {
     background-color: transparent;
 }
 
-.select {
-    margin-top: 10px;
-    border: solid 1px black;
-}
+
 
 .modal-card {
     font-size: 25px;
@@ -159,19 +160,7 @@ h3 {
          
      }
 
-    .is-warning {
-        width: 150px;
-        margin-top: 10px;
-    }
-    
-    #addressInput {
-        width: 225px;
-    }
-    
-    #postalZipInput, #countryInput {
-        width: 75px;
-    }
-    
+
     #userSubmit {
         margin-top: 10px;
     }
