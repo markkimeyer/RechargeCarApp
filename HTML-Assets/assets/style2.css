@@ -85,9 +85,7 @@ h3 {
     margin-top: 10px;
 }
 
-#newSearch {
-    margin-top: 10px; 
-    float: right;
+
 }
 #info {
     font-size: 16px;
@@ -136,6 +134,9 @@ h3 {
     background-color: rgb(54, 51, 233);
 }
 
+#newSearch {
+    margin-top: 10px; 
+    float: right;
 
 @media screen and (max-width: 1000px) {
     
