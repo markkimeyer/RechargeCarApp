@@ -139,6 +139,10 @@ h3 {
 }
 
 @media screen and (max-width: 1000px) {
+
+    .welcomeHeader {
+        margin: 0px;
+    }
     
     #mapInputBox {
          width: 250px;
