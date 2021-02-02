@@ -18,26 +18,41 @@
 
 <body>
 
-    <div id="header">
+    <!-- <div id="header">
         <h1><i class="fa fa-bolt"></i> Recharge <i class="fa fa-bolt"></i></h1>
-    </div>
+    </div> -->
+
+    <section class="hero">
+        <div class="hero-body">
+            <h1 class="title">
+                <i class="fa fa-bolt"></i> Recharge <i class="fa fa-bolt"></i>
+            </h1>
+          <p class="subtitle">
+            Welcome to Recharge! Have an electric car? Not sure where to charge it? Just put your location information
+            in the fields below and we'll find your nearest station! See which one is best for you and click "Get
+            Directions!" to gear up and go.
+          </p>
+        </div>
+      </section>
 
 
 
-    <div class="welcome">
+    <!-- <div class="welcome">
         <h3 class="welcomeHeader">Welcome to Recharge! Have an electric car? Not sure where to charge it? Just put your location information
             in the fields below and we'll find your nearest station! See which one is best for you and click "Get
             Directions!" to gear up and go.</h3>
-    </div>
+    </div> -->
 
     <div class="columns is-mobile">
         <section class="column">
             <div class="card is-rounded" id="mapInputBox">
-            <h2>Enter Address Details    <i class="fa fa-question-circle" id = "info"></i></h2>
+            <i class="fa fa-question-circle" id = "info"></i>
+            <br>
                 <input class="input warning is-rounded" type="text" placeholder="Address" id="addressInput">
                 <input class="input warning is-rounded" type="text" placeholder="City" id="cityInput">
                 <input class="input warning is-rounded" type="text" placeholder="Postal/Zip Code" id="postalZipInput">
                 <input class="input warning is-rounded" type="text" placeholder="State" id="stateInput">
+                
                 <div class="field has-addons">
                     <div class="control is-expanded">
                         <div class="select is-rounded">
@@ -270,7 +285,6 @@
                         </div>
                     </div>
                 </div>
-                <br>
                 <button id="userSubmit" class="button is-black">Search</button>
             
                 <button id="newSearch" class="button is-black">Start Over</button>
