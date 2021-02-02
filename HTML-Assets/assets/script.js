@@ -108,7 +108,7 @@ window.onload = function () {
 
                 var stationDiv = $("<div class='card' id='station'>")
 
-                var sName = $("<h3 class='card-header-title'>");
+                var sName = $("<h3>class='card-header-title'>");
                 sName.html(stationName);
                 stationDiv.append(sName);
 
@@ -228,6 +228,10 @@ window.onload = function () {
         //Function call to render directions
         mapDirect(startAddress, endAddress);
 
+    })
+
+    $(document).on("click", "#clear", function () {
+        window.location.reload();
     })
 
     //This fuction is necessary because it keeps the deployed page from running a CORS error.
