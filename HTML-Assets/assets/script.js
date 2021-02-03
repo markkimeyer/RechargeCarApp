@@ -68,7 +68,7 @@ window.onload = function () {
             country = country.replaceAll(" ", "+");
             queryURL += country;
         }
-
+        console.log(country)
         console.log(startAddress);
         console.log(queryURL)
         return queryURL
@@ -155,11 +155,13 @@ window.onload = function () {
                 var stationLong = station.AddressInfo.Longitude;
 
                 //puts pins in map for locations
-               L.marker([stationLat, stationLong], {
+                L.marker([stationLat, stationLong], {
                     icon: L.mapquest.icons.marker(),
                     draggable: false,
                     zoom: 14
                 }).bindPopup(stationName).addTo(map);
+
+                $(".progress").attr("style", "display: none")
 
             }
 
@@ -169,12 +171,14 @@ window.onload = function () {
 
     //Onclick function that retrieves radar and open charger objects
     $(document).on("click", "#userSubmit", function () {
-       
+
         //Resets address in case user submits again before refresh
         startAddress = "";
 
         //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
+
+        $(".progress").attr("style", "display: visible")
 
         var radarURL = buildQueryURL();
 
@@ -235,25 +239,25 @@ window.onload = function () {
         window.location.reload();
     })
 
-//info button 
-$(document).on("click", "#info", function () {
-    $(".infoAlert").addClass("is-active");
+    //info button 
+    $(document).on("click", "#info", function () {
+        $(".infoAlert").addClass("is-active");
 
-                $(".modal-close").click(function () {
-                    $(".infoAlert").removeClass("is-active");
+        $(".modal-close").click(function () {
+            $(".infoAlert").removeClass("is-active");
 
-                });;
-})
-
-    //This fuction is necessary because it keeps the deployed page from running a CORS error.
-    function mapDirect (start, end) {
-    L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
-    var call = L.mapquest.directions().route({
-        start: start,
-        end: end,
+        });;
     })
 
-    return "https://cors-anywhere.herokuapp.com/" + call
+    //This fuction is necessary because it keeps the deployed page from running a CORS error.
+    function mapDirect(start, end) {
+        L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
+        var call = L.mapquest.directions().route({
+            start: start,
+            end: end,
+        })
+
+        return "https://cors-anywhere.herokuapp.com/" + call
     }
 
 }
