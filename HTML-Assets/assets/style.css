@@ -1,6 +1,4 @@
 html { 
-    /* background-image: url(https://www.itl.cat/pngfile/big/299-2992292_electric-wallpapers-pc-electricity-background-picture-cool.jpg); */
-    /* background-position: -10px; */
     background-image: url("pictures/background.png");
 }
 
@@ -36,7 +34,6 @@ html {
     color: white;
     padding: 10px;
     font-size: 60px;
-
 }
 
 #mapInputBox {
@@ -47,10 +44,12 @@ html {
     background-color: transparent;
     padding: 10px;   
 }
+
 #postalZipInput {
     min-width: 145px;
     max-width: 145px;
 }
+
 .select {
     width: 145px;
     margin-top: 10px;
