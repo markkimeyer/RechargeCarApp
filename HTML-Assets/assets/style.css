@@ -12,22 +12,18 @@ html {
 }
 
 
-/* h3 {
-    color:rgb(54, 51, 233);
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size:large;
-    font-weight: 800;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
+h2 {
+   color: white;
+   font-size: 20px;
+}
 
-/* .welcomeHeader {
+.welcomeHeader {
     font-size: 20px;
     margin: 0px 200px;
    background-color: black;
    padding: 5px;
    font-size: 24px;
-} */
+}
 
 #header{
     text-align: center;
@@ -109,18 +105,18 @@ html {
     background-color: rgb(54, 51, 233);
 }
 
-#newSearch {
+#newSearch, #userSubmit {
     width: 125px;
     margin-top: 10px; 
-    float: left;
+    margin-left: 30px;
+    border: 1px solid white;
 }
-#userSubmit {
-    width: 125px;
-    margin-top: 10px;
-}
-
 
 @media screen and (max-width: 768px) {
+
+    .welcomeHeader {
+        margin: 0px;
+    }
 
     #mapInputBox {
         width: 250px;
