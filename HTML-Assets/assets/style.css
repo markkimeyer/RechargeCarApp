@@ -40,12 +40,20 @@ html {
 }
 
 #mapInputBox {
-    width: 500px;
+    max-width: 500px;
     margin-top: 50px;
     margin-right: 100px;
     margin-left: 25px;
-    background-color: rgb(207, 10, 165, 0.1);
+    background-color: transparent;
     padding: 10px;   
+}
+#postalZipInput {
+    min-width: 145px;
+    max-width: 145px;
+}
+.select {
+    width: 145px;
+    margin-top: 10px;
 }
 
 #stationCardsCard {
@@ -58,27 +66,6 @@ html {
 .warning {
     margin-top: 10px;
     border: solid 1px black;
-}
-
-#addressInput {
-    width: 430px;
-}
-
-#postalZipInput, #countryInput {
-    width: 175px;
-}
-
-#cityInput, #stateInput {
-    width: 250px;
-}
-
-.select {
-    margin-top: 10px;
-    margin-left: 255px;
-    bottom: 50px;
-}
-
-#userSubmit {
 }
 
 #info {
@@ -100,13 +87,10 @@ html {
     margin-right: 25px;
     margin-bottom: 25px;
     margin-left: -100px;
- 
-
 }
 
 #map {
     margin: auto;
-    border: solid 5px black;
 }
 
 #station {
@@ -121,15 +105,21 @@ html {
 
 .directBtn {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
     background-color: rgb(54, 51, 233);
 }
 
 #newSearch {
+    width: 125px;
     margin-top: 10px; 
-    float: right;
+    float: left;
 }
+#userSubmit {
+    width: 125px;
+    margin-top: 10px;
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -138,23 +128,10 @@ html {
         margin-top: 25px;
         margin-right: 50px;
         margin-left: 25px;
-        background-color: rgb(34, 79, 118);
-        padding: 10px;
+        background-color: transparent;
+        padding: 5px;
         
     }
-
-   .is-warning {
-       width: 150px;
-       margin-top: 10px;
-   }
-   
-   #addressInput {
-      width: 250px;
-   }
-   
-   #postalZipInput, #countryInput {
-       width: 75px;
-   }
    
    #userSubmit {
        margin-top: 10px;
@@ -162,17 +139,18 @@ html {
 
    #station {
    width: 250px;
-   height: 90px;
+   height: 250px;
    margin: 2px;
    font-size:small;
    }
-
+    
    .directBtn {
        position: absolute;
        width: 120px;
        bottom: 0;
        right: 0;
    }
+   
    #cardDisplay {
        opacity: 100%;
        margin-top: 5px;
