@@ -178,7 +178,6 @@ window.onload = function () {
         //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
 
-        $(".progress").attr("style", "display: visible")
 
         var radarURL = buildQueryURL();
 
@@ -187,6 +186,7 @@ window.onload = function () {
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "prj_test_pk_00195690c8304f5476bd6724bb7b514f8b7f5250")
             }, success: function (data) {
+                $(".progress").attr("style", "display: visible")
 
                 if (data.addresses.length == 0) {
                     $(".errorAlert").addClass("is-active");
