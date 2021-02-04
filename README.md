@@ -23,7 +23,7 @@ Show's the page's basic functionality.
 ### Technologies Used
 Server-Side APIs
 * Radar
-* Open Charger Mao
+* Open Charger Map
 
 Third Party API
 * Mapquest
@@ -38,7 +38,7 @@ Languages
 * Anna Fotis - Team Manager, Back End Development.
 * Markki Meyer - Back End Development
 * Brandon Norrgard - Front End Development
-* Noah Schalg - Front End Development
+* Noah Schlag - Front End Development
  
  ## License
  MIT License

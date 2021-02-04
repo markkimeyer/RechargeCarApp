@@ -1,4 +1,3 @@
-
 //Necessary to wrap whole page in this function for MapQuest needs
 window.onload = function () {
 
@@ -68,9 +67,7 @@ window.onload = function () {
             country = country.replaceAll(" ", "+");
             queryURL += country;
         }
-        console.log(country)
-        console.log(startAddress);
-        console.log(queryURL)
+      
         return queryURL
     }
 
@@ -83,7 +80,6 @@ window.onload = function () {
             method: "GET",
             url: chargeURL
         }).then(function (response) {
-            console.log(response);
 
             L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
 
@@ -178,7 +174,6 @@ window.onload = function () {
         //Makes clear map button appear on page.
         $(".clearBtn").attr("style", "display: none");
 
-
         var radarURL = buildQueryURL();
 
         $.ajax({
@@ -221,6 +216,7 @@ window.onload = function () {
         })
     })
 
+    //Click function to get directions
     $(document).on("click", ".directBtn", function () {
 
         $(".clearBtn").attr("style", "display: visible");
