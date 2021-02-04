@@ -74,7 +74,7 @@ window.onload = function () {
     //Function to return info from latitude and longitude
     function getMapInfo(latitude, longitude) {
 
-        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
+        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10&key=359b6eb3-c2bb-4a13-a71d-9b38f4674956";
 
         $.ajax({
             method: "GET",
