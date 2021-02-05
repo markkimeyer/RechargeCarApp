@@ -67,14 +67,19 @@ window.onload = function () {
             country = country.replaceAll(" ", "+");
             queryURL += country;
         }
-      
+
         return queryURL
     }
 
     //Function to return info from latitude and longitude
-    function getMapInfo(latitude, longitude) {
+    function getMapInfo() {
 
-        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10&key=359b6eb3-c2bb-4a13-a71d-9b38f4674956";
+        var object = JSON.parse(localStorage.getItem("location"));
+
+        var latitude = object.latitude;
+        var longitude = object.longitude;
+
+        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10&key=33ca1afc-75e4-4f8c-badd-034acab740e4";
 
         $.ajax({
             method: "GET",
@@ -198,8 +203,14 @@ window.onload = function () {
                     lat = data.addresses[0].latitude;
                     long = data.addresses[0].longitude;
 
+                    var location = {
+                        latitude: lat,
+                        longitude: long
+                    }
 
-                    getMapInfo(lat, long);
+                    localStorage.setItem("location", JSON.stringify(location));
+
+                    getMapInfo();
                 }
 
             }, error: function (jqXHR) {
