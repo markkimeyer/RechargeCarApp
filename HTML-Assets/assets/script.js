@@ -4,7 +4,7 @@ window.onload = function () {
     var startAddress = "";
 
     //MapQuest Function. Placeholder values. Doesn't really have a function yet
-    L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
+    L.mapquest.key = '3A3lhAkXNXezSPSZrxeb6j6IaeEr8z5N';
 
 
     var map = L.mapquest.map('map', {
@@ -86,7 +86,7 @@ window.onload = function () {
             url: chargeURL
         }).then(function (response) {
 
-            L.mapquest.key = 'lhwZF2aEhgoinOwPTf2HAfuqHZ1cDnGH';
+            L.mapquest.key = '3A3lhAkXNXezSPSZrxeb6j6IaeEr8z5N';
 
             map = L.mapquest.map('map', {
                 center: [latitude, longitude],
