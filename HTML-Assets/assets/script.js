@@ -79,7 +79,7 @@ window.onload = function () {
         var latitude = object.latitude;
         var longitude = object.longitude;
 
-        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10";
+        var chargeURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + latitude + "&longitude=" + longitude + "&maxresults=10" + "&key=e580becf-3021-462f-acfd-56defb117689";
 
         $.ajax({
             method: "GET",
